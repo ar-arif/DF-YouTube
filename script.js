@@ -17,18 +17,23 @@ function video()
 	let id;
 	if (is_url(url))
 	{
-		if (url.includes("youtube.com/watch?v"))
+		if (url.includes("m.youtube.com/watch?v"))
+		{
+			id = url.slice(30);
+		}
+		else if (url.includes("www.youtube.com/watch?v"))
 		{
 			id = url.slice(32);
 		}
-		else if (url.includes("m.youtube.com/watch?v"))
+		else if (url.includes("youtube.com/watch?v"))
 		{
-			id = url.slice(30);
+			id = url.slice(28);
 		}
 		else
 		{
 			id = url.slice(17);
 		}
+		console.log(id)
 		yt.innerHTML = `<iframe width="100%" height="500" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
 	}
 	else
