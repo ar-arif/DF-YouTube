@@ -11,8 +11,13 @@ ytLink.addEventListener("keyup", (event) => {
 
 function video() {
   let url = ytLink.value;
+  let id;
   if (is_url(url)) {
-    let id = url.slice(17);
+    if (url.includes("youtube.com/watch?v")) {
+      id = url.slice(32);
+    } else {
+      id = url.slice(17);
+    }
     yt.innerHTML = `<iframe width="100%" height="500" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
   } else {
     let alert = document.querySelector("#alert");
