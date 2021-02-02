@@ -23,7 +23,7 @@ function video()
 		}
 		else if (url.includes("m.youtube.com/watch?v"))
 		{
-			id = url.slice(34);
+			id = url.slice(30);
 		}
 		else
 		{
