@@ -17,22 +17,15 @@ function video()
 	let id;
 	if (is_url(url))
 	{
-		if (url.includes("m.youtube.com/watch?v"))
-		{
-			id = url.slice(30);
-		}
-    else if (url.includes("&list="))
+    if (url.includes("list="))
     {
-      temp = url.indexOf("&list=")
-      id = "videoseries?" + url.slice(temp + 1);
+      temp = url.indexOf("list=")
+      id = "videoseries?" + url.slice(temp);
     }
-		else if (url.includes("www.youtube.com/watch?v"))
+		else if (url.includes("watch?v="))
 		{
-			id = url.slice(32);
-		}
-		else if (url.includes("youtube.com/watch?v"))
-		{
-			id = url.slice(28);
+			temp = url.indexOf("watch?v=") + 8
+      id = url.slice(temp);
 		}
 		else
 		{
