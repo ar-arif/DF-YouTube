@@ -21,6 +21,11 @@ function video()
 		{
 			id = url.slice(30);
 		}
+    else if (url.includes("&list="))
+    {
+      temp = url.indexOf("&list=")
+      id = "videoseries?" + url.slice(temp + 1);
+    }
 		else if (url.includes("www.youtube.com/watch?v"))
 		{
 			id = url.slice(32);
@@ -34,7 +39,7 @@ function video()
 			id = url.slice(17);
 		}
 		console.log(id)
-		yt.innerHTML = `<iframe width="100%" height="500" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+		yt.innerHTML = `<iframe width="100%" height="500" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`; 
 	}
 	else
 	{

@@ -7,3 +7,11 @@
 #yt {
 	text-align: center;
 }
+
+.ytp-ce-shown .ytp-pause-overlay, .ytp-iv-drawer-open .ytp-pause-overlay, .ytp-menu-shown .ytp-pause-overlay, .ytp-settings-shown .ytp-pause-overlay, .ytp-small-mode .ytp-pause-overlay, .html5-video-player:not(.ytp-expand-pause-overlay) .ytp-pause-overlay .ytp-collapse, .html5-video-player:not(.ytp-expand-pause-overlay) .ytp-pause-overlay .ytp-next, .html5-video-player:not(.ytp-expand-pause-overlay) .ytp-pause-overlay .ytp-previous, .html5-video-player:not(.ytp-expand-pause-overlay) .ytp-pause-overlay .ytp-suggestions, .html5-video-player:not(.ytp-expand-pause-overlay) .ytp-pause-overlay .ytp-related-title, .ytp-pause-overlay.ytp-scroll-max .ytp-next, .ytp-pause-overlay.ytp-scroll-min .ytp-previous, .ytp-probably-keyboard-focus .ytp-pause-overlay .ytp-next, .ytp-probably-keyboard-focus .ytp-pause-overlay .ytp-previous, .ytp-touch-mode .ytp-pause-overlay .ytp-next, .ytp-touch-mode .ytp-pause-overlay .ytp-previous {
+    display: none !important;
+}
+
+.ytp-pause-overlay, .ytp-scroll-min {
+	display: none !important;
+}
