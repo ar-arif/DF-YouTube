@@ -25,7 +25,7 @@ function video()
 		else if (url.includes("watch?v="))
 		{
 			temp = url.indexOf("watch?v=") + 8
-      id = url.slice(temp);
+      id = url.slice(temp, temp + 11);
 		}
 		else
 		{
