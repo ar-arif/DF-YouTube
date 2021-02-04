@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KHR16H6H21"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-KHR16H6H21"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-  gtag('config', 'G-KHR16H6H21');
-</script>
-    
-    
-    
+      gtag("config", "G-KHR16H6H21");
+    </script>
+
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -25,8 +27,8 @@
       integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
       crossorigin="anonymous"
     />
-    
-    <link rel="shortcut icon" type="image/png" href="icon-white.png" >
+
+    <link rel="shortcut icon" type="image/png" href="icon-white.png" />
     <title>Distraction Free YouTube</title>
 
     <link rel="stylesheet" href="style.css" />
@@ -39,7 +41,7 @@
           id="inputURL"
           type="url"
           class="form-control bg-dark text-light"
-          placeholder="Video: https://youtu.be/xxxxxxxxxx   |   Playlist: https://youtube.com/playlist?list=xxxxxxxxxxx"
+          placeholder="Enter Your Video/Playlist URL"
           aria-label="Recipient's username with two button addons"
         />
         <button
@@ -51,13 +53,13 @@
         </button>
       </div>
 
-      <!--     alert -->
+      <!-- alert -->
       <div
         id="alert"
         class="alert alert-warning alert-dismissible fade show d-none"
         role="alert"
       >
-        <strong>Please enter valid url!</strong>
+        <strong>Please Enter Valid URL !</strong>
         <button
           type="button"
           class="btn-close"
