@@ -10,7 +10,7 @@ ytLink.addEventListener("keyup", (event) => {
 });
 
 function video() {
-  let url = ytLink.value;
+  let url = ytLink.value.trim();
   let id;
   if (is_url(url)) {
     if (url.includes("list=")) {
