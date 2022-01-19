@@ -17,6 +17,7 @@ ytLink.addEventListener("keyup", (event) => {
 
 function video() {
   let url = ytLink.value.trim();
+  clearCookies();
   document.cookie = url;
   let id;
   if (is_url(url)) {
@@ -45,4 +46,26 @@ function is_url(str) {
   } else {
     return false;
   }
+}
+
+function clearCookies(
+  wildcardDomain = false,
+  primaryDomain = true,
+  path = null
+) {
+  pathSegment = path ? "; path=" + path : "";
+  expSegment = "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+  document.cookie.split(";").forEach(function (c) {
+    primaryDomain &&
+      (document.cookie = c
+        .replace(/^ +/, "")
+        .replace(/=.*/, expSegment + pathSegment));
+    wildcardDomain &&
+      (document.cookie = c
+        .replace(/^ +/, "")
+        .replace(
+          /=.*/,
+          expSegment + pathSegment + "; domain=" + document.domain
+        ));
+  });
 }
