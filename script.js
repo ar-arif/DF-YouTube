@@ -2,7 +2,7 @@ let watchBTN = document.querySelector("#watch");
 let yt = document.querySelector("#yt");
 let ytLink = document.querySelector("#inputURL");
 function loadLink() {
-  ytLink.value = document.cookie;
+  ytLink.value = localStorage.getItem("ytLink");
   if (ytLink.value.length != 0) {
     video();
   }
@@ -17,8 +17,7 @@ ytLink.addEventListener("keyup", (event) => {
 
 function video() {
   let url = ytLink.value.trim();
-  clearCookies();
-  document.cookie = url;
+  localStorage.setItem("ytLink", url);
   let id;
   if (is_url(url)) {
     if (url.includes("list=")) {
@@ -30,8 +29,8 @@ function video() {
     } else {
       id = url.slice(17);
     }
-    console.log(id);
-    yt.innerHTML = `<iframe width="100%" height="500" src="https://www.youtube.com/embed/${id}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+    // console.log(id);
+    yt.innerHTML = `<iframe class="video" src="https://www.youtube.com/embed/${id}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
   } else {
     let alert = document.querySelector("#alert");
     alert.classList.remove("d-none");
@@ -46,26 +45,4 @@ function is_url(str) {
   } else {
     return false;
   }
-}
-
-function clearCookies(
-  wildcardDomain = false,
-  primaryDomain = true,
-  path = null
-) {
-  pathSegment = path ? "; path=" + path : "";
-  expSegment = "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
-  document.cookie.split(";").forEach(function (c) {
-    primaryDomain &&
-      (document.cookie = c
-        .replace(/^ +/, "")
-        .replace(/=.*/, expSegment + pathSegment));
-    wildcardDomain &&
-      (document.cookie = c
-        .replace(/^ +/, "")
-        .replace(
-          /=.*/,
-          expSegment + pathSegment + "; domain=" + document.domain
-        ));
-  });
 }
